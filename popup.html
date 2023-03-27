@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login to Server</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 0;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .form input {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .form button {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: #007acc;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="form">
+    <h2>Login to Server</h2>
+    <input type="text" placeholder="Server Address" id="serverAddress"/>
+    <input type="text" placeholder="Username" id="username"/>
+    <input type="password" placeholder="Password" id="password"/>
+    <input type="text" placeholder="Cookie Address" id="cookieAddress"/>
+    <button id="loginBtn">Login</button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
