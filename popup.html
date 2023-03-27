@@ -21,6 +21,7 @@
             background-color: #f5f5f5;
             padding: 2rem;
             border-radius: 1rem;
+            align-items: center;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
         }
 
@@ -31,7 +32,7 @@
             font-size: 1rem;
         }
 
-        .form button {
+        button {
             padding: 1rem;
             border: none;
             border-radius: 0.5rem;
@@ -40,18 +41,50 @@
             color: #fff;
             cursor: pointer;
         }
+
+        .form input[type=checkbox] {
+            height: 16px;
+            width: 16px;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: #007acc;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
     </style>
 </head>
+<template id="form-item">
+    <div class="form-row">
+        <input type="checkbox"/>
+        <input type="text" placeholder="Server Address" id="serverAddress"/>
+        <input type="text" placeholder="Username" id="username"/>
+        <input type="password" placeholder="Password" id="password"/>
+        <input type="text" placeholder="Cookie Address" id="cookieAddress"/>
+        <button id="loginBtn">Login</button>
+    </div>
+</template>
 <body>
-<div class="form">
-    <h2>Login to Server</h2>
-    <input type="text" placeholder="Server Address" id="serverAddress"/>
-    <input type="text" placeholder="Username" id="username"/>
-    <input type="password" placeholder="Password" id="password"/>
-    <input type="text" placeholder="Cookie Address" id="cookieAddress"/>
-    <button id="loginBtn">Login</button>
+<h2>Login to Server</h2>
+<div class="form" id="form">
 </div>
-
-<script src="popup.js"></script>
+<button onclick="onAdd()">Добавить</button>
 </body>
+
+    <script>
+        function onAdd() {
+            const item = document.querySelector('#form-item');
+            const clone = item.content.cloneNode(true);
+            const form = document.querySelector('#form');
+            form.appendChild(clone);
+        }
+        onAdd();
+    </script>
 </html>
