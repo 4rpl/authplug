@@ -1,17 +1,13 @@
 {
-  "name": "My Extension",
-  "description": "My Chrome Extension",
-  "version": "1.0",
-  "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
+  "name": "Login to Server",
+  "version": "0.1",
+  "description": "Autologin to server",
+  "manifest_version": 2,
   "permissions": [
-    "https://example.com/*",
-    "https://google.com/*",
-    "https://amazon.com/*"
+    "<all_urls>","webRequest","webRequestBlocking"
   ],
-  "action": {
-    "default_popup": "popup.html"
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
   }
 }
