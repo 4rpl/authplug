@@ -36,7 +36,10 @@ function backgroundRequestListener(details) {
             // Получаем токен из ответа сервера и обновляем куки с помощью функции updateCookies()
             .then((response) => response.json())
             .then((data) => {
-                const token = data.token;
+                // Передаем для переменной how_to_get_token_from_data значение ключа из json, в котором хранится JWT
+                const how_to_get_token_from_data = "access_token"
+                // Вытаскиваем jwt и присваем его переменной token
+                const token = data[how_to_get_token_from_data];
                 updateCookies(cookieAddress, token);
                 // Добавляем заголовок Authorization с токеном к заголовкам запроса
                 headers.push({name: 'Authorization', value: `Bearer ${token}`});
