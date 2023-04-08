@@ -4,9 +4,13 @@
   "description": "Autologin to server",
   "manifest_version": 3,
   "permissions": [
-    "<all_urls>",
-    "declarativeNetRequest"
+    // "<all_urls>", // ??
+    // "webRequestBlocking", // v2
+    "declarativeNetRequestWithHostAccess",
+    // "declarativeNetRequest" // ??
+    "webRequest"
   ],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
